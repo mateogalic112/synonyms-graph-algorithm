@@ -4,7 +4,7 @@ import Search from "./_components/search";
 
 async function fetchSynonyms(query: string) {
   try {
-    const url = new URL("http://localhost:3000/api");
+    const url = new URL(`${process.env.FRONTEND_URL}/api`);
     if (query) {
       url.searchParams.append("word", query);
     }

@@ -8,7 +8,7 @@ interface FormState {
 }
 
 export const addSynonym = async (_: FormState, formData: FormData) => {
-  const res = await fetch("http://localhost:3000/api", {
+  const res = await fetch(`${process.env.FRONTEND_URL}/api`, {
     method: "POST",
     body: formData,
   });
