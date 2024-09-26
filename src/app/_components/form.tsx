@@ -1,11 +1,11 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { addSynonym } from "../actions/add-synonym";
 import { useFormState } from "react-dom";
 import { useToast } from "@/hooks/use-toast";
 import { useEffect } from "react";
+import { SubmitButton } from "./submit-button";
 
 const initialState = {
   success: false,
@@ -30,7 +30,7 @@ const Form = () => {
     <form className="flex flex-col gap-4 min-w-96" action={formAction}>
       <Input name="word" placeholder="Word" />
       <Input name="synonym" placeholder="Synonym" />
-      <Button type="submit">Submit</Button>
+      <SubmitButton variant="destructive" text="Submit" />
     </form>
   );
 };

@@ -1,10 +1,10 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { deleteSynonyms } from "../actions/delete-synonyms";
 import { useFormState } from "react-dom";
 import { useToast } from "@/hooks/use-toast";
 import { useEffect } from "react";
+import { SubmitButton } from "./submit-button";
 
 const initialState = {
   success: false,
@@ -27,7 +27,7 @@ export default function Reset() {
 
   return (
     <form action={formAction}>
-      <Button>Clear Words</Button>
+      <SubmitButton variant="default" text="Reset Words" />
     </form>
   );
 }
