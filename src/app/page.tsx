@@ -9,10 +9,7 @@ async function fetchSynonyms(query: string) {
       url.searchParams.append("word", query);
     }
 
-    const response = await fetch(url, {
-      next: { tags: ["synonyms"] },
-    });
-
+    const response = await fetch(url, { next: { tags: ["synonyms"] } });
     if (!response.ok) {
       throw new Error(`Failed to fetch synonyms for query: ${query}`);
     }
