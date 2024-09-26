@@ -57,6 +57,14 @@ export async function POST(request: Request) {
   return NextResponse.json({ message: "Synonym added successfully." });
 }
 
+export async function DELETE() {
+  synonyms.clear();
+
+  revalidateTag("synonyms");
+
+  return NextResponse.json({ message: "Synonyms deleted successfully." });
+}
+
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
   const word = searchParams.get("word");

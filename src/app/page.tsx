@@ -1,6 +1,7 @@
 import Form from "./_components/form";
 import List from "./_components/list";
 import Search from "./_components/search";
+import Reset from "./_components/reset";
 
 async function fetchSynonyms(query: string) {
   try {
@@ -35,6 +36,7 @@ export default async function Home({
         <Search />
         <List synonyms={data.synonyms ?? []} />
         <Form />
+        <Reset />
       </main>
     </div>
   );
