@@ -1,3 +1,4 @@
+import { revalidateTag } from "next/cache";
 import { NextResponse } from "next/server";
 
 // In-memory storage for synonyms
@@ -50,6 +51,9 @@ export async function POST(request: Request) {
   }
 
   addSynonym(word, synonym);
+
+  revalidateTag("synonyms");
+
   return NextResponse.json({ message: "Synonym added successfully." });
 }
 
